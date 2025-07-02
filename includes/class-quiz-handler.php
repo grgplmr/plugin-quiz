@@ -183,7 +183,8 @@ class BIAQuiz_Quiz_Handler {
         if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
             return $_SERVER['HTTP_CLIENT_IP'];
         } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-            return $_SERVER['HTTP_X_FORWARDED_FOR'];
+            $forwarded = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+            return trim($forwarded[0]);
         } else {
             return $_SERVER['REMOTE_ADDR'] ?? '';
         }
