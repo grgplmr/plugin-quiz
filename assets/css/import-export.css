@@ -1,0 +1,300 @@
+/* CSS pour l'interface d'import/export BIAQuiz */
+
+.biaquiz-import-export-container {
+    max-width: 1200px;
+}
+
+.biaquiz-import-export-container .postbox {
+    margin-bottom: 20px;
+}
+
+.biaquiz-import-export-container .postbox .inside {
+    padding: 20px;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0073aa, #005a87);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.progress-text {
+    text-align: center;
+    margin: 10px 0;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Results */
+#import-results, #export-results {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid;
+    display: none;
+}
+
+#import-results.success, #export-results.success {
+    background-color: #d4edda;
+    border-left-color: #28a745;
+    color: #155724;
+}
+
+#import-results.error, #export-results.error {
+    background-color: #f8d7da;
+    border-left-color: #dc3545;
+    color: #721c24;
+}
+
+#import-results.warning, #export-results.warning {
+    background-color: #fff3cd;
+    border-left-color: #ffc107;
+    color: #856404;
+}
+
+.result-summary {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.result-details {
+    margin-top: 10px;
+}
+
+.result-errors {
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    background: rgba(0,0,0,0.05);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.result-errors ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.result-errors li {
+    margin-bottom: 5px;
+    color: #721c24;
+}
+
+/* Form Styling */
+.form-table th {
+    width: 150px;
+    font-weight: 600;
+}
+
+.form-table input[type="file"] {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-table select {
+    min-width: 200px;
+}
+
+.form-table .description {
+    font-style: italic;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Templates Section */
+pre {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    border: 1px solid #e9ecef;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: #333;
+}
+
+/* Buttons */
+.button.loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.button.loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* File Upload Area */
+.file-upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    transition: border-color 0.3s ease;
+    background: #fafafa;
+}
+
+.file-upload-area:hover {
+    border-color: #0073aa;
+    background: #f0f8ff;
+}
+
+.file-upload-area.dragover {
+    border-color: #0073aa;
+    background: #e6f3ff;
+}
+
+.file-upload-icon {
+    font-size: 48px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.file-upload-text {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.file-upload-hint {
+    font-size: 14px;
+    color: #999;
+}
+
+/* Options */
+.import-options, .export-options {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+}
+
+.import-options label, .export-options label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.import-options input[type="checkbox"], .export-options input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .biaquiz-import-export-container {
+        margin: 0 -20px;
+    }
+    
+    .biaquiz-import-export-container .postbox .inside {
+        padding: 15px;
+    }
+    
+    .form-table th {
+        width: auto;
+        display: block;
+        padding-bottom: 5px;
+    }
+    
+    .form-table td {
+        display: block;
+        padding-left: 0;
+    }
+    
+    pre {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
+/* Status Icons */
+.status-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.status-icon.success {
+    background-color: #28a745;
+}
+
+.status-icon.error {
+    background-color: #dc3545;
+}
+
+.status-icon.warning {
+    background-color: #ffc107;
+}
+
+.status-icon.info {
+    background-color: #17a2b8;
+}
+
+/* Loading Animation */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #0073aa;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Template Download Links */
+.template-downloads {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f0f8ff;
+    border-radius: 6px;
+    border: 1px solid #b3d9ff;
+}
+
+.template-downloads h4 {
+    margin-top: 0;
+    color: #0073aa;
+}
+
+.template-downloads .button {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+

@@ -1,0 +1,4 @@
+title,category,difficulty,question_text,answer_1,answer_2,answer_3,answer_4,correct_answer,explanation
+"Quiz Test Aérodynamique","aerodynamique","facile","Qu'est-ce qui génère la portance d'un avion ?","La poussée des moteurs","La forme de l'aile et l'écoulement de l'air","Le poids de l'avion","La traînée",2,"La portance est générée par la différence de pression entre l'extrados et l'intrados de l'aile."
+"Quiz Test Aérodynamique","aerodynamique","facile","Quelle est l'unité de mesure de la vitesse en aéronautique ?","km/h","m/s","nœuds","mph",3,"Le nœud (nautical mile per hour) est l'unité standard en aéronautique."
+
