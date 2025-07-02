@@ -17,6 +17,7 @@ class BIAQuiz_Import_Export {
         add_action('wp_ajax_biaquiz_import', array(__CLASS__, 'ajax_import'));
         add_action('wp_ajax_biaquiz_export', array(__CLASS__, 'ajax_export'));
         add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueue_scripts'));
+        add_action('admin_init', array(__CLASS__, 'maybe_download_template'));
     }
     
     /**
@@ -288,12 +289,19 @@ class BIAQuiz_Import_Export {
         </style>
         <?php
         
-        // Gérer le téléchargement des templates
-        if (isset($_GET['action']) && $_GET['action'] === 'download_template') {
-            self::download_template($_GET['format']);
+    }
+
+    /**
+     * Trigger template download before any output
+     */
+    public static function maybe_download_template() {
+        if (isset($_GET['page']) && $_GET['page'] === 'biaquiz-import-export' &&
+            isset($_GET['action']) && $_GET['action'] === 'download_template') {
+            $format = isset($_GET['format']) ? $_GET['format'] : 'json';
+            self::download_template($format);
         }
     }
-    
+
     /**
      * AJAX Import
      */
